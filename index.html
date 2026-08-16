@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Infinity News Channel — Star Sparkle</title>
+<title>Star Sparkle — Multi-Channel Owner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -174,27 +174,29 @@
     60%{ transform:translateY(-5px); }
   }
 
-  /* FEATURES */
-  .do-section{ background:var(--dark-card); padding:5rem 2rem; text-align:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .do-section h2{
+  /* CHANNEL SECTION */
+  .channel-section{ background:var(--dark-card); padding:5rem 2rem; text-align:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .channel-section h2{
     font-family:'Playfair Display', serif; font-weight:700; font-style:italic;
     font-size:clamp(2rem, 5vw, 3rem); margin-bottom:2.5rem; color:var(--white);
   }
-  .do-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  .channel-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
     gap:1.8rem; max-width:900px; margin:0 auto;
   }
-  .do-item{
+  .channel-card{
     background:var(--black); border:1px solid var(--line); border-radius:24px;
     padding:2.2rem 1.5rem; font-weight:600; font-size:1rem; color:var(--white);
     transition:all .3s ease; 
   }
-  .do-item:hover{
+  .channel-card:hover{
     background:linear-gradient(145deg, var(--blue), var(--green));
     color:var(--white); border-color:var(--green-light); transform:translateY(-8px);
     box-shadow: 0 12px 40px rgba(15,82,186,0.2);
   }
-  .do-item .do-icon{font-size:3rem; display:block; margin-bottom:.8rem;}
+  .channel-card .count{font-size:2.5rem; font-weight:800; color:var(--green-light); display:block; margin-bottom:.5rem;}
+  .channel-card .sub{font-size:.85rem; color:var(--grey); font-weight:400;}
+  .channel-card a{text-decoration:none; color:inherit; display:block;}
 
   .cta-buttons{ margin:3.2rem 0 0; display:flex; flex-wrap:wrap; justify-content:center; gap:1.2rem; }
   .cta-btn{
@@ -216,7 +218,7 @@
     color:var(--grey); font-weight:500; max-width:480px;
     margin:0 auto 2.5rem; font-size:1rem;
   }
-  .links-buttons{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.2rem; max-width:740px; margin:0 auto; }
+  .links-buttons{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.2rem; max-width:600px; margin:0 auto; }
   .link-btn{
     display:inline-flex; align-items:center; gap:.8rem; padding:1.2rem 2.5rem;
     border-radius:16px; text-decoration:none; font-weight:700; font-size:.95rem;
@@ -227,22 +229,7 @@
   .link-btn:hover{ transform:translateY(-5px); }
   .link-btn svg{ width:24px; height:24px; flex-shrink:0; }
 
-  /* SPECIAL SECTION */
-  .fx-section{
-    background:var(--dark-card); color:var(--white); padding:4.5rem 2rem; text-align:center;
-    border:2px solid var(--green); border-radius:24px; margin:3.5rem 1.5rem;
-    animation:borderPulse 4s ease-in-out infinite;
-  }
-  @keyframes borderPulse { 0%,100%{border-color:var(--green); box-shadow:0 0 20px rgba(0,184,148,0.05);} 50%{border-color:var(--green-light); box-shadow:0 0 40px rgba(0,184,148,0.15);} }
-  .fx-section h2{
-    font-family:'Playfair Display', serif; font-weight:700; font-style:italic;
-    font-size:clamp(2rem, 5vw, 3rem); line-height:1.3; color:var(--blue-soft);
-  }
-  .fx-section p{
-    margin-top:1rem; font-size:1.05rem; color:var(--grey); max-width:560px;
-    margin-left:auto; margin-right:auto; line-height:1.6;
-  }
-
+  /* FOOTER */
   footer{
     background:var(--black); color:var(--grey); padding:2.5rem 2rem;
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
@@ -253,11 +240,9 @@
 
   @media (max-width:700px){
     .hero{padding:4rem 1.3rem 3rem;}
-    .fx-section{border-radius:20px; padding:3rem 1.2rem; margin:2rem 1rem;}
     .cta-buttons, .links-buttons{flex-direction:column;}
     .cta-btn, .link-btn{width:100%; min-width:unset;}
     footer{flex-direction:column; text-align:center;}
-    .do-grid{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
@@ -267,13 +252,12 @@
 
 <div id="splash">
   <div class="glow"></div>
-  <div class="splash-frame" id="splashFrame" tabindex="0" role="button" aria-label="Enter Infinity News Channel">
-    <!-- Uses sparkle.png -->
+  <div class="splash-frame" id="splashFrame" tabindex="0" role="button" aria-label="Enter Star Sparkle Channels">
     <img id="gateImage" src="sparkle.png" alt="Star Sparkle"
       onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230F52BA%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%2300B894%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%230B0E14%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 fill=%22url(%23g)%22 opacity=%220.25%22/%3E%3Ctext x=%22100%22 y=%22125%22 font-size=%2270%22 font-weight=%22bold%22 text-anchor=%22middle%22 fill=%22%2300B894%22 font-family=%22Arial%22%3E%E2%9C%A8%3C/text%3E%3C/svg%3E';">
   </div>
   <div class="prompt">Tap to Enter</div>
-  <div class="prompt-sub">Infinity News Channel</div>
+  <div class="prompt-sub">3 Channels · 60K+ Subscribers</div>
 </div>
 
 <div class="main-content" id="mainContent">
@@ -281,53 +265,61 @@
   <section class="hero">
     <span class="watermark">✨</span>
     <div class="hero-inner">
-      <span class="eyebrow">Infinity News Channel</span>
+      <span class="eyebrow">Multi-Channel Owner</span>
       <h1 class="hero-title"><span class="accent">Star</span> Sparkle</h1>
       <div class="hero-tagline">
         <span>Verified Promoter</span><span>Escrow</span><span>Giftcards</span>
       </div>
-      <p class="hero-sub">Crypto to Naira dealer | Trusted deals | Autopay Group | 2.9K subscribers and growing.</p>
-      <a href="#links" class="scroll-cue">↓</a>
+      <p class="hero-sub">Crypto to Naira dealer | Trusted deals | Autopay Groups | Verified promoter.</p>
+      <a href="#channels" class="scroll-cue">↓</a>
     </div>
   </section>
 
-  <section class="do-section">
-    <h2>What We Offer</h2>
-    <div class="do-grid">
-      <div class="do-item"><span class="do-icon">🔐</span><span>Escrow</span></div>
-      <div class="do-item"><span class="do-icon">🎁</span><span>Giftcards</span></div>
-      <div class="do-item"><span class="do-icon">₿</span><span>Crypto to Naira</span></div>
-      <div class="do-item"><span class="do-icon">✅</span><span>Trusted Deals</span></div>
+  <section class="channel-section" id="channels">
+    <h2>Channels Owned</h2>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <a href="https://t.me/IAmLostInTg" target="_blank" rel="noopener">
+          <span class="count">54.1K</span>
+          <span>@IAmLostInTg</span>
+          <span class="sub">Subscribers</span>
+        </a>
+      </div>
+      <div class="channel-card">
+        <a href="https://t.me/gramautol" target="_blank" rel="noopener">
+          <span class="count">3.9K</span>
+          <span>@gramautol</span>
+          <span class="sub">Subscribers</span>
+        </a>
+      </div>
+      <div class="channel-card">
+        <a href="https://t.me/starsupdate001" target="_blank" rel="noopener">
+          <span class="count">2.9K</span>
+          <span>@starsupdate001</span>
+          <span class="sub">Subscribers</span>
+        </a>
+      </div>
     </div>
     <div class="cta-buttons">
-      <a href="https://t.me/starsupdate001" class="cta-btn primary" target="_blank" rel="noopener">📡 Channel</a>
+      <a href="https://t.me/Star_Sparkle001" class="cta-btn primary" target="_blank" rel="noopener">👤 Owner</a>
       <a href="https://t.me/InfintyV1Bot" class="cta-btn secondary" target="_blank" rel="noopener">🤖 Bot Creator</a>
     </div>
   </section>
 
-  <section class="links-section" id="links">
+  <section class="links-section">
     <h2>Connect With Star Sparkle</h2>
-    <p>Verified promoter | Autopay Group | Escrow & Giftcard Dealer | Crypto/Naira</p>
+    <p>Verified promoter | Escrow | Giftcard Dealer | Crypto/Naira</p>
     <div class="links-buttons">
       <a href="https://t.me/Star_Sparkle001" class="link-btn primary-btn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 7.2l-1.6 7.6c-.12.55-.44.68-.9.42l-2.5-1.85-1.2 1.16c-.13.13-.25.25-.5.25l.18-2.55 4.65-4.2c.2-.18-.04-.28-.32-.1l-5.75 3.62-2.47-.77c-.54-.17-.55-.54.11-.8l9.65-3.72c.45-.16.85.1.7.94z"/></svg>
         Owner / Advert
       </a>
-      <a href="https://t.me/GramAutol" class="link-btn secondary-btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 7.2l-1.6 7.6c-.12.55-.44.68-.9.42l-2.5-1.85-1.2 1.16c-.13.13-.25.25-.5.25l.18-2.55 4.65-4.2c.2-.18-.04-.28-.32-.1l-5.75 3.62-2.47-.77c-.54-.17-.55-.54.11-.8l9.65-3.72c.45-.16.85.1.7.94z"/></svg>
-        Autopay Group
-      </a>
     </div>
   </section>
 
-  <section class="fx-section">
-    <h2>Verified Promoter ✅</h2>
-    <p>2.9K subscribers and rising. Escrow, giftcards, and trusted crypto-to-naira deals daily.</p>
-  </section>
-
   <footer>
-    <span>© 2026 Infinity News Channel.</span>
-    <span><a href="https://t.me/Star_Sparkle001" target="_blank" rel="noopener">Contact Star Sparkle</a></span>
+    <span>© 2026 Star Sparkle.</span>
+    <span><a href="https://t.me/Star_Sparkle001" target="_blank" rel="noopener">Contact Owner</a></span>
   </footer>
 
 </div>
